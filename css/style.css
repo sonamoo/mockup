@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.bottom-nav-bar {
+    margin-top: 20px;
+    z-index: 1200;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:60px;
+    width:100%;
+    background:black;
+    color: white;
+    opacity: 0.9
+
+}
+
+.tab {
+    text-align: center;
+    border-right: solid white 1px;
+    height:60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.socialFeed {
+    margin: 0;
+    height: 200px;
+    width: 90%;
+    background-color: white;
+}
+
+.nav_menu {
+    margin: 0;
+}
+
