@@ -1,20 +1,19 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #e5e5e5;
 }
 
 .bottom-nav-bar {
     margin-top: 20px;
     z-index: 1200;
     position:fixed;
-    left:0px;
     bottom:0px;
     height:60px;
     width:100%;
     background:black;
     color: white;
     opacity: 0.9
-
 }
 
 .tab {
@@ -25,6 +24,7 @@ body {
 
 a {
     text-decoration: none;
+
 }
 
 a:link {
@@ -44,9 +44,10 @@ a:active {
 }
 
 .socialFeed {
-    margin: 0;
-    height: 200px;
-    width: 90%;
+    margin-top: 10px;
+    padding: 15px;
+    min-height: 300px;
+    width: 100%;
     background-color: white;
 }
 
@@ -54,3 +55,67 @@ a:active {
     margin: 0;
 }
 
+.top-bar {
+    height: 58px;
+    background-color: #000000;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+}
+
+.profile_image {
+    display: inline-block;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.profile {
+    font-size: 13px;
+    padding-top: 10px;
+    color: white;
+}
+
+.feed-header {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 5px;
+
+    font-size: 13px;
+}
+
+.feedReference {
+    font-size: 13px;
+    height: 20px;
+    width: 100%;
+}
+
+.feed-content {
+    font-size: 15px;
+}
+
+.likes,
+.feed-comments-shares {
+    width: 45%;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.feed-comments-shares {
+    text-align: right;
+    color: #606060;
+}
+
+.feed-actions {
+    height: 17px;
+}
+
+.feed-action-button {
+    width: 32%;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    color: #606060;
+}
