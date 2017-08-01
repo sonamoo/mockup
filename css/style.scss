@@ -262,7 +262,7 @@ body {
     min-height: $d-chartHeight;
     border-bottom: 1px solid $c-border;
 
-    padding: 1em;
+    padding: 0;
 }
 
 .chart--headline, .chart--subHeadline {
@@ -306,6 +306,10 @@ body {
     color: #444;
     background-color: #fff;
     padding: 1em;
+}
+
+#lineChart {
+    margin:0px;
 }
 
 .lineChart--area {
@@ -476,6 +480,11 @@ line {
 tr {
     height: 30px;
 
+}
+
+li {
+    padding: 0;
+    margin: 0;
 }
 
 .container-fluid {

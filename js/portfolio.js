@@ -382,6 +382,7 @@
      * @param {String} elementId elementId
      * @param {Array}  data      data
      */
+
     function drawLineChart( elementId, data ) {
         // parse helper functions on top
         var parse = d3.time.format( '%Y-%m-%d' ).parse;
@@ -402,7 +403,7 @@
                 left   : 0
             },
 
-            detailWidth  = 100,
+            detailWidth  = 98,
             detailHeight = 55,
             detailMargin = 10,
 
