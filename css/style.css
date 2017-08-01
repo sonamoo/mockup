@@ -5,11 +5,12 @@ body {
   min-height: 1000px; }
 
 .bottom-nav-bar {
-  margin-top: 20px;
+  margin: 20px 0 0 0;
   z-index: 1200;
   position: fixed;
   bottom: 0px;
   height: 60px;
+  padding: 0;
   width: 100%;
   background: black;
   color: white;
@@ -182,7 +183,7 @@ body {
   letter-spacing: 1px; }
 
 .charts--container {
-  background-color: #afd6ff;
+  background-color: white;
   width: 100%; }
 
 .charts--headline {
@@ -261,7 +262,7 @@ body {
   stroke-width: 1; }
 
 .pieChart--detail--percentage {
-  font-size: 42px;
+  font-size: 27px;
   font-weight: 100;
   fill: #333;
   stroke-width: 1px; }
@@ -300,10 +301,22 @@ body {
 .pieChart__navy {
   fill: #1187c7; }
 
+.color-block {
+  width: 10px; }
+
 /**
  * Helper classes
  */
 .hidden {
   display: none; }
+
+tr {
+  height: 30px; }
+
+.container-fluid {
+  padding: 0px; }
+
+.asset_percent {
+  font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */

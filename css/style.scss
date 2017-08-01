@@ -5,12 +5,16 @@ body {
     min-height: 1000px;
 }
 
+
+
 .bottom-nav-bar {
-    margin-top: 20px;
+    margin: 20px 0 0 0;
     z-index: 1200;
     position:fixed;
     bottom:0px;
     height:60px;
+    padding: 0;
+
     width:100%;
     background:black;
     color: white;
@@ -292,7 +296,7 @@ body {
 }
 
 .charts--container {
-    background-color: $c-bg;
+    background-color: white;
     width: 100%;
 
 }
@@ -404,7 +408,7 @@ line {
 }
 
 .pieChart--detail--percentage {
-    font-size: $f-sizePieChartPercentage;
+    font-size: $f-sizePieChartPercentage - 15px;
     font-weight: $f-weightPieChartPercentage;
 
     fill: $c-baseColor;
@@ -456,6 +460,10 @@ line {
     fill: $c-navy;
 }
 
+.color-block {
+    width: 10px;
+}
+
 
 /**
  * Helper classes
@@ -463,4 +471,17 @@ line {
 
 .hidden {
     display: none;
+}
+
+tr {
+    height: 30px;
+
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.asset_percent {
+    font-size: 20px;
 }

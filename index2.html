@@ -3,8 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-index2
+
+
+<body class="body">
+<div class="charts--container container-fluid">
+    <div class="row">
+        <div class="col top-bar">
+
+        </div>
+        <div class="col top-bar">
+
+        </div>
+
+        <div class="col top-bar profile">
+            <img src="img/puppy.png" class="profile_image">
+            <strong>Eric Lim</strong>
+            <span class=" fa fa-angle-down"></span>
+        </div>
+    </div>
+    <ul>
+        <li class="chart">
+            <h3 class="chart--subHeadline">Chart 1</h3>
+            <h3 class="chart--headline">Personalized Investment Plan</h3>
+            <div id="pieChart">
+                <svg id="pieChartSVG">
+                    <defs>
+                        <filter id='pieChartInsetShadow'>
+                            <feOffset dx='0' dy='0'/>
+                            <feGaussianBlur stdDeviation='6' result='offset-blur' />
+                            <feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse' />
+                            <feFlood flood-color='black' flood-opacity='1' result='color' />
+                            <feComposite operator='in' in='color' in2='inverse' result='shadow' />
+                            <feComposite operator='over' in='shadow' in2='SourceGraphic' />
+                        </filter>
+                        <filter id="pieChartDropShadow">
+                            <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+                            <feOffset in="blur" dx="0" dy="3" result="offsetBlur" />
+                            <feMerge>
+                                <feMergeNode />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+            <div id="pieChartDetails">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th id="color_1" scope="row"></th>
+                            <td>Fund A</td>
+                            <td class="asset_percent">13%</td>
+                        </tr>
+                        <tr>
+                            <th id="color_2" scope="row"></th>
+                            <td>Fund B</td>
+                            <td class="asset_percent">7%</td>
+                        </tr>
+                        <tr>
+                            <th id="color_3" scope="row"></th>
+                            <td>Fund C</td>
+                            <td class="asset_percent">4%</td>
+                        </tr>
+                        <tr>
+                            <th id="color_4" scope="row"></th>
+                            <td>Fund D</td>
+                            <td class="asset_percent">6%</td>
+                        </tr>
+                        <tr>
+                            <th id="color_5" scope="row"></th>
+                            <td>Bond A</td>
+                            <td class="asset_percent">5%</td>
+                        </tr>
+                        <tr>
+                            <th id="color_6" scope="row"></th>
+                            <td>Bond B</td>
+                            <td class="asset_percent">45%</td>
+                        </tr>
+                        <tr>
+                            <th id="color_7" scope="row"></th>
+                            <td>Bond C</td>
+                            <td class="asset_percent"><strong>20%</strong></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </li>
+        <li class="chart">
+            <h3 class="chart--subHeadline">Chart 2</h3>
+            <h2 class="chart--headline">Wealth Prediction</h2>
+            <div id="lineChart">
+                <svg id="lineChartSVG" class="lineChart--svg">
+                    <defs>
+                        <linearGradient id="lineChart--gradientBackgroundArea" x1="0" x2="0" y1="0" y2="1">
+                            <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+                            <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </li>
+    </ul>
+    <div class="row bottom-nav-bar">
+        <div class="col tab">
+            <a href="#">Home</a>
+        </div>
+
+
+        <div class="col tab">
+            <a href="index2.html">Tab2</a>
+        </div>
+
+
+        <div class="col tab">
+            <a href="index3.html">Tab3</a>
+        </div>
+
+
+        <div class="col tab">
+            <a href="index4.html">Tab 4</a>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="js/portfolio.js"></script>
 </body>
 </html>
