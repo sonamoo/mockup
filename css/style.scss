@@ -1,0 +1,466 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e5e5e5;
+    min-height: 1000px;
+}
+
+.bottom-nav-bar {
+    margin-top: 20px;
+    z-index: 1200;
+    position:fixed;
+    bottom:0px;
+    height:60px;
+    width:100%;
+    background:black;
+    color: white;
+    opacity: 0.9
+}
+
+.tab {
+    text-align: center;
+    border-right: solid white 1px;
+    height:60px;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.socialFeed {
+    margin-top: 10px;
+    padding: 15px;
+    min-height: 300px;
+    width: 100%;
+    background-color: white;
+}
+
+.nav_menu {
+    margin: 0;
+}
+
+.top-bar {
+    height: 58px;
+    background-color: #000000;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+}
+
+.profile_image {
+    display: inline-block;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.profile {
+    font-size: 13px;
+    padding-top: 10px;
+    color: white;
+}
+
+.feed-header {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.feedReference {
+    font-size: 13px;
+    height: 20px;
+    width: 100%;
+}
+
+.feed-content {
+    font-size: 15px;
+}
+
+.likes,
+.feed-comments-shares {
+    width: 45%;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.feed-comments-shares {
+    text-align: right;
+    color: #606060;
+}
+
+.feed-actions {
+    height: 17px;
+}
+
+.feed-action-button {
+    width: 32%;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    color: #606060;
+}
+
+
+
+
+
+path {
+    stroke: steelblue;
+    stroke-width: 1;
+    fill: none;
+}
+
+.axis {
+    shape-rendering: crispEdges;
+}
+.x.axis line {
+    stroke: lightgrey;
+}
+.x.axis .minor {
+    stroke-opacity: .5;
+}
+.x.axis path {
+    display: none;
+}
+.y.axis line, .y.axis path {
+    fill: none;
+    stroke: #000;
+}
+
+.axis path, .axis line
+{
+    fill: none;
+    stroke: #777;
+    shape-rendering: crispEdges;
+}
+
+.axis text
+{
+    font-family: 'Arial';
+    font-size: 13px;
+}
+.tick
+{
+    stroke-dasharray: 1, 2;
+}
+.bar
+{
+    fill: FireBrick;
+}
+
+
+
+
+
+
+/**
+ * Variables
+ */
+
+// color stuff
+$c-bg             : #afd6ff;
+$c-baseColor      : #333;
+$c-baseColorBright: #666;
+
+$c-border           : #eee;
+$c-borderDark       : $c-baseColor;
+$c-borderBright     : adjust-lightness( $c-baseColor, 30 );
+$c-borderBrightPlus : adjust-lightness( $c-baseColor, 50 );
+$c-shadow           : $c-baseColor;
+$c-dashedLine       : adjust-lightness( $c-baseColor, 40 );
+
+$c-borderDevider : $c-borderBright;
+
+$c-red  : #d79d91;
+$c-blue : #6bb7c7;
+$c-orange : #c78c4e;
+$c-yellow : #c7bb2d;
+$c-green : #26c73a;
+$c-purple : #7f44c7;
+$c-navy : #1187c7;
+
+
+
+// font-stuff
+$f-family : sans-serif;
+
+// sizes
+$f-baseSize               : 14px;
+
+$f-sizeHeadline           : 2 * $f-baseSize;
+$f-sizeSubHeadline        : $f-baseSize;
+
+$f-sizePieChartPercentage : 3 * $f-baseSize;
+$f-sizePieChartText       : 2 * $f-baseSize;
+
+$f-sizeBubbleLabel : 0.9 * $f-baseSize;
+$f-sizeBubbleValue : 1.5 * $f-baseSize;
+
+// weights
+$f-weight            : 100;
+$f-weightHeadline    : $f-weight;
+$f-weightSubHeadline : 400;
+
+$f-weightPieChartPercentage : 100;
+
+// spacing
+$f-spacing : 1px;
+
+// dimensions
+$d-chartHeight : 400px;
+
+// set base styles
+   * {
+       -moz-box-sizing: border-box;
+       box-sizing: border-box;
+   }
+
+body {
+    font-size: $f-baseSize;
+    font-family: $f-family;
+    font-weight: $f-weight;
+
+    background-color: #ccc;
+    background-image: linear-gradient(transparent 50%, rgba(255,255,255,.5) 25%);
+    background-size: 4px 4px;
+
+    ul {
+        list-style: none;
+    }
+
+    ul, li {
+        margin: 0;
+        padding: 0;
+}
+}
+
+.chart {
+    min-height: $d-chartHeight;
+    border-bottom: 1px solid $c-border;
+
+    padding: 1em;
+}
+
+.chart--headline, .chart--subHeadline {
+    text-align: center;
+}
+
+.chart--headline {
+    position: relative;
+
+    font-weight: $f-weightHeadline;
+    font-size: $f-sizeHeadline - 4px;
+
+&:before {
+     position: absolute;
+     content: '';
+
+     bottom: 133%;
+     left: 50%;
+
+     width: 25%;
+     margin: 0 0 0 -12.5%;
+
+     border-top: 1px dashed $c-dashedLine;
+ }
+}
+
+.chart--subHeadline {
+    font-weight: $f-weightSubHeadline;
+    font-size: $f-sizeSubHeadline;
+    letter-spacing: $f-spacing;
+}
+
+.charts--container {
+    background-color: $c-bg;
+    width: 100%;
+
+}
+
+.charts--headline {
+    text-align: center;
+    color: #444;
+    background-color: #fff;
+    padding: 1em;
+}
+
+.lineChart--area {
+    fill: url(#lineChart--gradientBackgroundArea);
+}
+
+.lineChart--areaLine {
+    fill   : none;
+    stroke : $c-blue;
+    stroke-width: 3;
+}
+
+.lineChart--bubble--label {
+    fill: none;
+    stroke: $c-blue;
+
+    font-size: $f-sizeBubbleLabel;
+    font-style: italic;
+    font-weight: $f-weight;
+}
+
+.lineChart--bubble--value {
+    fill: #fff;
+    stroke: #fff;
+
+    font-size: $f-sizeBubbleValue;
+    font-weight: $f-weight;
+}
+.lineChart--circle {
+    fill: $c-blue;
+    stroke: #fff;
+    stroke-width: 3;
+}
+
+.lineChart--circle__highlighted {
+    fill: #fff;
+    stroke: adjust-lightness( $c-blue, -15 );
+}
+
+.lineChart--gradientBackgroundArea--top {
+    stop-color   : $c-blue;
+    stop-opacity : 0.1;
+}
+
+.lineChart--gradientBackgroundArea--bottom {
+    stop-color   : $c-blue;
+    stop-opacity : 0.6;
+}
+
+.lineChart--svg {
+    border: 1px solid $c-border;
+}
+
+// d3.js doesn't let me BEM it. :(
+.lineChart--xAxisTicks, .lineChart--xAxis, .lineChart--yAxisTicks {
+.domain {
+    display: none;
+}
+}
+
+.lineChart--xAxis {
+.tick {
+line {
+    display: none;
+}
+}
+}
+
+.lineChart--xAxisTicks, .lineChart--yAxisTicks {
+.tick {
+line {
+    fill: none;
+    stroke: $c-borderBrightPlus;
+    stroke-width: 1;
+    stroke-dasharray: 2,2;
+}
+}
+}
+
+
+#pieChartDetails {
+    margin-top: 20px;
+}
+
+.pieChart--center--innerCircle {
+    fill: #fff;
+}
+
+.pieChart--center--text {
+    font-size: $f-sizePieChartText;
+}
+
+.pieChart--center--outerCircle {
+    fill: rgba( 255, 255, 255, 0.75 );
+}
+
+.pieChart--detail--divider {
+    stroke: $c-borderDevider;
+    stroke-width: 1;
+}
+
+.pieChart--detail--percentage {
+    font-size: $f-sizePieChartPercentage;
+    font-weight: $f-weightPieChartPercentage;
+
+    fill: $c-baseColor;
+    stroke-width: 1px;
+}
+
+.pieChart--detail--textContainer {
+    background-color: transparent;
+    padding: 10px 0 0 0;
+    margin: 0;
+
+    color: $c-baseColorBright;
+    font-style: italic;
+}
+
+.pieChart--detail__left {
+    text-align: left;
+}
+
+.pieChart--detail__right {
+    text-align: right;
+}
+
+.pieChart__blue {
+    fill: $c-blue;
+}
+
+.pieChart__red {
+    fill: $c-red;
+}
+
+.pieChart__orange {
+    fill: $c-orange;
+}
+
+.pieChart__yellow {
+    fill: $c-yellow;
+}
+
+.pieChart__green {
+    fill: $c-green;
+}
+
+.pieChart__purple {
+    fill: $c-purple;
+}
+
+.pieChart__navy {
+    fill: $c-navy;
+}
+
+
+/**
+ * Helper classes
+ */
+
+.hidden {
+    display: none;
+}
