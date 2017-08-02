@@ -332,8 +332,8 @@ body {
 }
 
 .lineChart--bubble--value {
-    fill: #fff;
-    stroke: #fff;
+    fill: black;
+    stroke: black;
 
     font-size: $f-sizeBubbleValue;
     font-weight: $f-weight;
@@ -493,4 +493,13 @@ li {
 
 .asset_percent {
     font-size: 20px;
+}
+
+.top-bar-div {
+    margin-bottom: 25px;
+}
+
+.second-chart {
+    padding-bottom: 500px;
+    margin-top: 40px;
 }

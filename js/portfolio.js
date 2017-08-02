@@ -2,54 +2,54 @@
     var data = {
         lineChart : [
             {
-                date  : '2006-02-22',
-                label : 'foo',
-                value : 450
+                date  : '2017-02-22',
+                label : '2017',
+                value : 1100
             },
             {
-                date  : '2006-08-22',
-                label : 'bar',
-                value : 500
+                date  : '2018-02-22',
+                label : '2018',
+                value : 1800
             },
             {
-                date  : '2007-01-11',
-                label : 'baz',
-                value : 700
+                date  : '2019-02-22',
+                label : '2019',
+                value : 2600
             },
             {
-                date  : '2008-10-01',
-                label : 'boing',
-                value : 1000
+                date  : '2020-02-22',
+                label : '2020',
+                value : 3500
             },
             {
-                date  : '2009-02-24',
-                label : 'loool',
-                value : 1423
+                date  : '2021-02-22',
+                label : '2021',
+                value : 4400
             },
             {
-                date  : '2010-12-30',
-                label : 'YEAH',
-                value : 1450
+                date  : '2022-02-22',
+                label : '2022',
+                value : 5200
             },
             {
-                date  : '2011-05-15',
-                label : 'Hurray',
-                value : 1550
+                date  : '2023-02-22',
+                label : '2023',
+                value : 5900
             },
             {
-                date  : '2012-04-02',
-                label : 'WTF',
-                value : 1600
+                date  : '2024-02-22',
+                label : '2024',
+                value : 6550
             },
             {
-                date  : '2013-08-19',
-                label : 'OMG',
-                value : 1610
+                date  : '2025-02-22',
+                label : '2025',
+                value : 7050
             },
             {
-                date  : '2013-11-11',
-                label : 'ROFL',
-                value : 1620
+                date  : '2026-02-22',
+                label : '2026',
+                value : 7450
             }
         ],
         pieChart  : [
@@ -88,7 +88,6 @@
                 title: 'trains',
                 value: 0.20
             }
-
         ]
     };
 
@@ -374,8 +373,6 @@
         .style("fill", '#1187c7');
 
 
-
-
     /**
      * draw the fancy line chart
      *
@@ -395,8 +392,8 @@
 
         // TODO code duplication check how you can avoid that
         var containerEl = document.getElementById( elementId ),
-            width       = containerEl.clientWidth *1.2,
-            height      = width * 0.5,
+            width       = containerEl.clientWidth,
+            height      = width * 0.6,
             margin      = {
                 top    : 0,
                 right  : 0,
@@ -454,12 +451,12 @@
 
         svg.append( 'g' )
             .attr( 'class', 'lineChart--xAxisTicks' )
-            .attr( 'transform', 'translate(' + detailWidth / 2 + ',' + height + ')' )
+            .attr( 'transform', 'translate(' + detailWidth  + ',' + height + ')' )
             .call( xAxisTicks );
 
         svg.append( 'g' )
             .attr( 'class', 'lineChart--xAxis' )
-            .attr( 'transform', 'translate(' + detailWidth / 2 + ',' + ( height + 7 ) + ')' )
+            .attr( 'transform', 'translate(' + detailWidth + ',' + ( height + 7 ) + ')' )
             .call( xAxis );
 
         svg.append( 'g' )
