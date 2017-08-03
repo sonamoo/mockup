@@ -1,3 +1,65 @@
+/**
+ * Variables
+ */
+
+// color stuff
+$c-bg             : #afd6ff;
+$c-baseColor      : #333;
+$c-baseColorBright: #666;
+
+$c-border           : #eee;
+$c-borderDark       : $c-baseColor;
+$c-borderBright     : adjust-lightness( $c-baseColor, 30 );
+$c-borderBrightPlus : adjust-lightness( $c-baseColor, 50 );
+$c-shadow           : $c-baseColor;
+$c-dashedLine       : adjust-lightness( $c-baseColor, 40 );
+
+$c-borderDevider : $c-borderBright;
+
+$c-red  : #d79d91;
+$c-blue : #6bb7c7;
+$c-orange : #c78c4e;
+$c-yellow : #c7bb2d;
+$c-green : #26c73a;
+$c-purple : #7f44c7;
+$c-navy : #1187c7;
+
+
+
+// font-stuff
+$f-family : sans-serif;
+
+// sizes
+$f-baseSize               : 14px;
+
+$f-sizeHeadline           : 2 * $f-baseSize;
+$f-sizeSubHeadline        : $f-baseSize;
+
+$f-sizePieChartPercentage : 3 * $f-baseSize;
+$f-sizePieChartText       : 2 * $f-baseSize;
+
+$f-sizeBubbleLabel : 0.9 * $f-baseSize;
+$f-sizeBubbleValue : 1.5 * $f-baseSize;
+
+// weights
+$f-weight            : 100;
+$f-weightHeadline    : $f-weight;
+$f-weightSubHeadline : 400;
+
+$f-weightPieChartPercentage : 100;
+
+// spacing
+$f-spacing : 1px;
+
+// dimensions
+$d-chartHeight : 400px;
+
+
+
+
+
+
+
 body {
     margin: 0;
     padding: 0;
@@ -5,7 +67,9 @@ body {
     min-height: 1000px;
 }
 
-
+.container-fluid {
+    padding: 0;
+}
 
 .bottom-nav-bar {
     margin: 20px 0 0 0;
@@ -50,7 +114,7 @@ a:active {
 
 .socialFeed {
     margin-top: 10px;
-    padding: 15px;
+    padding: 30px;
     min-height: 300px;
     width: 100%;
     background-color: white;
@@ -99,6 +163,11 @@ a:active {
 .feed-content {
     font-size: 15px;
 }
+
+.feed-thumbnail-img {
+    height: 100px;
+}
+
 
 .likes,
 .feed-comments-shares {
@@ -177,61 +246,7 @@ path {
 
 
 
-/**
- * Variables
- */
 
-// color stuff
-$c-bg             : #afd6ff;
-$c-baseColor      : #333;
-$c-baseColorBright: #666;
-
-$c-border           : #eee;
-$c-borderDark       : $c-baseColor;
-$c-borderBright     : adjust-lightness( $c-baseColor, 30 );
-$c-borderBrightPlus : adjust-lightness( $c-baseColor, 50 );
-$c-shadow           : $c-baseColor;
-$c-dashedLine       : adjust-lightness( $c-baseColor, 40 );
-
-$c-borderDevider : $c-borderBright;
-
-$c-red  : #d79d91;
-$c-blue : #6bb7c7;
-$c-orange : #c78c4e;
-$c-yellow : #c7bb2d;
-$c-green : #26c73a;
-$c-purple : #7f44c7;
-$c-navy : #1187c7;
-
-
-
-// font-stuff
-$f-family : sans-serif;
-
-// sizes
-$f-baseSize               : 14px;
-
-$f-sizeHeadline           : 2 * $f-baseSize;
-$f-sizeSubHeadline        : $f-baseSize;
-
-$f-sizePieChartPercentage : 3 * $f-baseSize;
-$f-sizePieChartText       : 2 * $f-baseSize;
-
-$f-sizeBubbleLabel : 0.9 * $f-baseSize;
-$f-sizeBubbleValue : 1.5 * $f-baseSize;
-
-// weights
-$f-weight            : 100;
-$f-weightHeadline    : $f-weight;
-$f-weightSubHeadline : 400;
-
-$f-weightPieChartPercentage : 100;
-
-// spacing
-$f-spacing : 1px;
-
-// dimensions
-$d-chartHeight : 400px;
 
 // set base styles
    * {
@@ -487,9 +502,7 @@ li {
     margin: 0;
 }
 
-.container-fluid {
-    padding: 0px;
-}
+
 
 .asset_percent {
     font-size: 20px;
@@ -505,8 +518,17 @@ li {
 }
 
 .messages {
-    height: 600px;
+    margin-top: 30px;
+    height: 230px;
     font-size: 30px;
     text-align: center;
     padding: 10px;
+}
+
+.messages-loader {
+    height: 300px;
+}
+
+.space {
+    height: 30px;
 }

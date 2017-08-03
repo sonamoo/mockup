@@ -1,8 +1,14 @@
+/**
+ * Variables
+ */
 body {
   margin: 0;
   padding: 0;
   background-color: #e5e5e5;
   min-height: 1000px; }
+
+.container-fluid {
+  padding: 0; }
 
 .bottom-nav-bar {
   margin: 20px 0 0 0;
@@ -38,7 +44,7 @@ a:active {
 
 .socialFeed {
   margin-top: 10px;
-  padding: 15px;
+  padding: 30px;
   min-height: 300px;
   width: 100%;
   background-color: white; }
@@ -79,6 +85,9 @@ a:active {
 
 .feed-content {
   font-size: 15px; }
+
+.feed-thumbnail-img {
+  height: 100px; }
 
 .likes,
 .feed-comments-shares {
@@ -136,9 +145,6 @@ path {
 .bar {
   fill: FireBrick; }
 
-/**
- * Variables
- */
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
@@ -320,9 +326,6 @@ li {
   padding: 0;
   margin: 0; }
 
-.container-fluid {
-  padding: 0px; }
-
 .asset_percent {
   font-size: 20px; }
 
@@ -334,9 +337,16 @@ li {
   margin-top: 40px; }
 
 .messages {
-  height: 600px;
+  margin-top: 30px;
+  height: 230px;
   font-size: 30px;
   text-align: center;
   padding: 10px; }
+
+.messages-loader {
+  height: 300px; }
+
+.space {
+  height: 30px; }
 
 /*# sourceMappingURL=style.css.map */

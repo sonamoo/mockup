@@ -5,8 +5,10 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/morningstarDesignSystem.css">
     <script src="js/angular.min.js"></script>
-    <link rel="stylesheet" href="../../../../Downloads/morningstar/app/css/myStyle.css">
+    <script src="js/portfolio.js"></script>
+    <script src="js/angularApp.js"></script>
 
 </head>
 
@@ -26,17 +28,24 @@
             <span class=" fa fa-angle-down"></span>
         </div>
     </div>
+
     <div class="row messages" ng-show="showMessage">
-        <div class="col">{{message}}</div>
-        <div class="mds-loader" role="progressbar" aria-valuetext="Please wait, page is loading...">
-            <div class="mds-loader__item mds-loader__item--1"></div>
-            <div class="mds-loader__item mds-loader__item--2"></div>
-            <div class="mds-loader__item mds-loader__item--3"></div>
-            <div class="mds-loader__item mds-loader__item--4"></div>
-            <div class="mds-loader__item mds-loader__item--5"></div>
-            <div class="mds-loader__item mds-loader__item--6"></div>
-            <div class="mds-loader__item mds-loader__item--7"></div>
-            <div class="mds-loader__item mds-loader__item--8"></div>
+        <div class="col">
+            <span ng-cloak>{{message}}</span>
+        </div>
+    </div>
+    <div class="row messages-loader" ng-show="showMessage">
+        <div class="col">
+            <div class="mds-loader--large" role=”progressbar” aria-hidden="false" aria-valuetext="Please wait, page is loading...">
+                <div class="mds-loader__item mds-loader__item--1"></div>
+                <div class="mds-loader__item mds-loader__item--2"></div>
+                <div class="mds-loader__item mds-loader__item--3"></div>
+                <div class="mds-loader__item mds-loader__item--4"></div>
+                <div class="mds-loader__item mds-loader__item--5"></div>
+                <div class="mds-loader__item mds-loader__item--6"></div>
+                <div class="mds-loader__item mds-loader__item--7"></div>
+                <div class="mds-loader__item mds-loader__item--8"></div>
+            </div>
         </div>
     </div>
     <ul>
@@ -159,8 +168,7 @@
     </div>
 </div>
 
-<script src="js/portfolio.js"></script>
-<script src="js/angularApp.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
