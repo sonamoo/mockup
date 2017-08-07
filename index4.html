@@ -50,15 +50,18 @@
         <h5 class="filter-header">Companies you are investing (Articles)</h5>
         <hr>
         <div class="search-result" ng-repeat="article in articles | searchArticles:query">
-            <div ng-repeat="(key, value) in article">
+            <div ng-repeat="(key, value) in article" ng-cloak>
                 {{value}}
             </div>
         </div>
         <h5 class="filter-header">Friends</h5>
         <hr>
-        <div class="search-result" ng-repeat="item in names | searchNames:query" ng-bind="item" ng-click="setQuery(item)"></div>
+        <div class="search-result" ng-repeat="item in names | searchNames:query" ng-cloak ng-bind="item" ng-click="setQuery(item)"></div>
         <h5 class="filter-header">Hashes</h5>
         <hr>
+        <div class="search-result" ng-repeat="item in hashes | searchHashes:query" ng-cloak ng-click="setQuery(item)">
+            <div ng-repeat="hash in item">{{hash}}</div>
+        </div>
     </div>
 
 

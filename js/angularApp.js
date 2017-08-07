@@ -63,6 +63,7 @@ prototypeApp.controller('searchController',
 
         $scope.names = names;
         $scope.articles = articles;
+        $scope.hashes = hashes;
 
         console.log($scope.articles);
 
@@ -86,6 +87,9 @@ prototypeApp.filter('searchArticles', function() {
    return searchArticles;
 });
 
+prototypeApp.filter('searchHashes', function() {
+   return searchHashes;
+});
 
 
 function searchNames(arr, query) {
@@ -120,6 +124,26 @@ function searchArticles(arr, query) {
         if (item["company"].toLowerCase().indexOf(query) !== -1) {
             console.log(item);
             results.push(item);
+        }
+    });
+
+    return results;
+}
+
+
+function searchHashes(arr, query) {
+    if (!query) {
+        return arr;
+    }
+
+    var results = [];
+    query = query.toLowerCase();
+
+    angular.forEach(arr, function(item) {
+        console.log(item);
+        if (item["company"].toLowerCase().indexOf(query) !== -1) {
+            console.log(item["hashes"]);
+            results.push(item["hashes"]);
         }
     });
 
