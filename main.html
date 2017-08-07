@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="prototypeApp">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -13,14 +13,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="js/d3.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/angularApp.js"></script>
+    <link rel="stylesheet" href="css/morningstarDesignSystem.css">
     <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-<div class="container-fluid ">
+<body ng-controller="mainController">
+<div class="container-fluid" ng-class="{showingMessage: showMessage}">
     <div class="row">
         <div class="col top-bar">
+            <img class="logo" src="img/logo1.png" style="height:50px; padding-left: 30px">
 
         </div>
         <div class="col top-bar">
@@ -28,21 +32,43 @@
         </div>
 
         <div class="col top-bar profile">
-            <img src="img/puppy.png" class="profile_image">
+            <img src="img/3.jpeg" class="profile_image">
             <strong>Eric Lim</strong>
             <span class=" fa fa-angle-down"></span>
         </div>
     </div>
 
-    <div class="row">
+
+
+    <div class="row messages" ng-show="showMessage" style="background-color: white;">
+        <div class="col">
+            <span ng-cloak>{{message}}</span>
+        </div>
+    </div>
+    <div class="row messages-loader" ng-show="showMessage" style="background-color: white; height: 1000px">
+        <div class="col">
+            <div class="mds-loader--large" role=”progressbar” aria-hidden="false" aria-valuetext="Please wait, page is loading...">
+                <div class="mds-loader__item mds-loader__item--1"></div>
+                <div class="mds-loader__item mds-loader__item--2"></div>
+                <div class="mds-loader__item mds-loader__item--3"></div>
+                <div class="mds-loader__item mds-loader__item--4"></div>
+                <div class="mds-loader__item mds-loader__item--5"></div>
+                <div class="mds-loader__item mds-loader__item--6"></div>
+                <div class="mds-loader__item mds-loader__item--7"></div>
+                <div class="mds-loader__item mds-loader__item--8"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-hide="hideSocialFeed">
         <div class="col socialFeed">
             <div class="feedReference">
-                <strong>Eric Lim</strong> Liked this post.
+                <strong>Tyler Dixon</strong> Liked this post.
             </div>
             <hr style="margin: 10px 0">
             <div class="feed-header">
-                <img src="img/cat1.png" class="profile_image">
-                <strong>Investor 1</strong>
+                <img src="img/2.jpeg" class="profile_image">
+                <strong>Clara Reinkemeyer</strong>
 
             </div>
             <div class="feed-content-header">
@@ -57,7 +83,8 @@
                     <img src="img/morningstar_thumbnail.png" class="feed-thumbnail-img">
                 </div>
                 <div class="feed-thumbnail-content" style="width: 60%; display: inline-block; margin-top: 10px;">
-                    <p>The market has been on a roll this year. For the year to date through July 31, the S&P 500 has gained 11.6%.
+                    <p>
+                        19 Stocks on a Roll, With More Room to Run
                     </p>
                 </div>
 
@@ -79,15 +106,15 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" ng-hide="hideSocialFeed">
         <div class="col socialFeed">
             <div class="feedReference">
                 <strong>Zhiwei Zhang</strong> Recommend this article to you.
             </div>
             <hr style="margin: 10px 0">
             <div class="feed-header">
-                <img src="img/sloth.png" class="profile_image">
-                <strong>Socail Influencers</strong>
+                <img src="img/1.png" class="profile_image">
+                <strong>Ethan Levy</strong>
             </div>
             <div class="feed-content-header">
                 <h5>3 Top Performing ESG Funds</h5>
@@ -122,19 +149,22 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" ng-hide="hideSocialFeed">
         <div class="col socialFeed">
+            <div class="feedReference">
+                <strong>Clara Reinkemeyer</strong> Liked this post.
+            </div>
             <hr style="margin: 10px 0">
             <div class="feed-header">
-                <img src="img/horse.png" class="profile_image">
-                <strong>Socail Influencers 1</strong>
+                <img src="img/5.jpeg" class="profile_image">
+                <strong>Lily Schroeder</strong>
             </div>
             <div class="feed-content-header">
-                <h5>10 Tips for Successful Long-Term Investing</h5>
+                <h5>My Retirement Funds</h5>
             </div>
             <div class="feed-content">
 
-                In the stock market some principles are indisputable. Let's review 10 general principles to help investors best approach the market from a long-term view. Every point is a fundamental concept every investor should know.
+                My retirement funds are now completely clean of fossil fuels <strong class="hash">#goinggreen #cleaninvesting</strong>
             </div>
             <div class="feed-footer">
                 <div class="likes">
@@ -152,32 +182,136 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" ng-hide="hideSocialFeed">
         <div class="col socialFeed">
-            sdaf
+            <div class="feedReference">
+                <strong>Ethan Levy</strong> Liked this post.
+            </div>
+            <hr style="margin: 10px 0">
+            <div class="feed-header">
+                <img src="img/4.jpeg" class="profile_image">
+                <strong>Tyler Dixon</strong>
+
+            </div>
+            <div class="feed-content-header">
+                <h5>Monthly Factsheet on ESG Fund</h5>
+            </div>
+            <div class="feed-content">
+                Article about ESG Fund. <strong class="hash">@Zhiwei Zhang</strong>, Aren't you investing in ESG funds? This article is awesome!
+            </div>
+            <div class="feed-shared">
+
+                <div class="feed-thumbnail" style="width: 35%; display: inline-block">
+                    <a href="https://www.chartbook.fid-intl.com/FILPS/Documents/en/current/pro.en.xx.LU0772969993.pdf"><img src="img/fidel.png" class="feed-thumbnail-img"></a>
+                </div>
+                <div class="feed-thumbnail-content" style="width: 60%; display: inline-block; margin-top: 10px;">
+                    <a href="https://www.chartbook.fid-intl.com/FILPS/Documents/en/current/pro.en.xx.LU0772969993.pdf"><p>Before investing you should read the Key Investor Information Document (KIID)
+                    </p></a>
+                </div>
+
+            </div>
+            <div class="feed-footer">
+                <div class="likes">
+                    <i class="fa fa-heart" aria-hidden="true"></i> 166
+                </div>
+                <div class="feed-comments-shares" style="width: 50%">
+                    2 Comments 150 Shares
+                </div>
+                <hr style="margin: 10px 0">
+                <div class="feed-actions">
+                    <div class="feed-action-button"><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like</a></div>
+                    <div class="feed-action-button"><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> Comment</a></div>
+                    <div class="feed-action-button"><a href="#"><i class="fa fa-share" aria-hidden="true"></i> Share</a></div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <div class="row" ng-hide="hideSocialFeed">
+        <div class="col socialFeed">
+            <div class="feedReference">
+                <strong>Lily Schroeder </strong> Shared this post.
+            </div>
+            <hr style="margin: 10px 0">
+            <div class="feed-header">
+                <img src="img/6.jpeg" class="profile_image">
+                <strong>Zhiwei Zhang</strong>
+
+            </div>
+            <div class="feed-content-header">
+                <h5>The Beginner's Guide to Investing in Mutual Funds
+                </h5>
+            </div>
+            <div class="feed-content">
+                Read this article if you just started to invest in mutual funds!
+            </div>
+            <div class="feed-shared">
+
+                <div class="feed-thumbnail" style="width: 35%; display: inline-block">
+                    <a href="https://www.chartbook.fid-intl.com/FILPS/Documents/en/current/pro.en.xx.LU0772969993.pdf"><img src="img/dd.png" class="feed-thumbnail-img"></a>
+                </div>
+                <div class="feed-thumbnail-content" style="width: 60%; display: inline-block; margin-top: 10px;">
+                    <a href="https://www.thebalance.com/mutual-funds-beginners-guide-357958"><p>Mutual funds are one of the most popular ways for new investors to build wealth.
+                    </p></a>
+                </div>
+
+            </div>
+            <div class="feed-footer">
+                <div class="likes">
+                    <i class="fa fa-heart" aria-hidden="true"></i> 166
+                </div>
+                <div class="feed-comments-shares" style="width: 50%">
+                    2 Comments 150 Shares
+                </div>
+                <hr style="margin: 10px 0">
+                <div class="feed-actions">
+                    <div class="feed-action-button"><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like</a></div>
+                    <div class="feed-action-button"><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> Comment</a></div>
+                    <div class="feed-action-button"><a href="#"><i class="fa fa-share" aria-hidden="true"></i> Share</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dummy"></div>
+
     <div class="row bottom-nav-bar">
         <div class="col tab">
-            <a href="main.html">Home</a>
+            <div class="tab-icon" style="height: 70%">
+                <a href="main.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+            </div>
+            <div class="tab-icon-des" style="height: 20%">
+
+                <a href="main.html">Home</a>
+            </div>
         </div>
-
-
         <div class="col tab">
-            <a href="index2.html">Tab2</a>
+            <div class="tab-icon" style="height: 70%">
+                <a href="index2.html"><i class="fa fa-line-chart" aria-hidden="true"></i></a>
+            </div>
+            <div class="tab-icon-des" style="height: 20%">
+
+                <a href="index2.html">My Portfolio</a>
+            </div>
         </div>
-
-
         <div class="col tab">
-            <a href="index3.html">Tab3</a>
+            <div class="tab-icon" style="height: 70%">
+                <a href="index3.html"><i class="fa fa-pie-chart" aria-hidden="true"></i></a>
+            </div>
+            <div class="tab-icon-des" style="height: 20%">
+
+                <a href="index3.html">Investar Class</a>
+            </div>
         </div>
-
-
         <div class="col tab">
-            <a href="index4.html">Tab 4</a>
-        </div>
+            <div class="tab-icon" style="height: 70%">
+                <a href="index4.html"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </div>
+            <div class="tab-icon-des" style="height: 20%">
 
+                <a href="index4.html">Search</a>
+            </div>
+        </div>
     </div>
 </div>
 

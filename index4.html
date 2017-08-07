@@ -1,11 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="prototypeApp">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/morningstarDesignSystem.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/angularApp.js"></script>
+
 </head>
-<body>
-index 4
+
+
+<body class="search-body" ng-controller="searchController">
+
+<div class="container-fluid" ng-class="{showingMessage: showMessage}">
+    <div class="row">
+        <div class="col top-bar">
+            <img class="logo" src="img/logo1.png" style="height:50px; padding-left: 30px">
+        </div>
+        <div class="col top-bar">
+
+        </div>
+
+        <div class="col top-bar profile">
+            <img src="img/3.jpeg" class="profile_image">
+            <strong>Eric Lim</strong>
+            <span class=" fa fa-angle-down"></span>
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 70px; background-color:black;">
+        <div class="col">
+            <div class="mds-search-field search-div" role="search">
+                <input ng-model="query" type="text" class="mds-search-field__input search-bar" aria-label="Search" placeholder="Search..." ng-focus="focus=true">
+                <span class="mds-search-field__input-focus-outline"></span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="search-results" ng-show="focus">
+        <h5 class="filter-header">Companies you are investing (Articles)</h5>
+        <hr>
+        <div class="search-result" ng-repeat="article in articles | searchArticles:query">
+            <div ng-repeat="(key, value) in article">
+                {{value}}
+            </div>
+        </div>
+        <h5 class="filter-header">Friends</h5>
+        <hr>
+        <div class="search-result" ng-repeat="item in names | searchNames:query" ng-bind="item" ng-click="setQuery(item)"></div>
+        <h5 class="filter-header">Hashes</h5>
+        <hr>
+    </div>
+
+
+    <div class="row bottom-nav-bar">
+        <div class="col tab">
+            <div class="tab-icon" style="height: 70%">
+                <a href="main.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+            </div>
+            <div class="tab-icon-des" style="height: 20%">
+
+                <a href="main.html">Home</a>
+            </div>
+        </div>
+        <div class="col tab">
+            <div class="tab-icon" style="height: 70%">
+                <a href="index2.html"><i class="fa fa-line-chart" aria-hidden="true"></i></a>
+            </div>
+            <div class="tab-icon-des" style="height: 20%">
+
+                <a href="index2.html">My Portfolio</a>
+            </div>
+        </div>
+        <div class="col tab">
+            <div class="tab-icon" style="height: 70%">
+                <a href="index3.html"><i class="fa fa-pie-chart" aria-hidden="true"></i></a>
+            </div>
+            <div class="tab-icon-des" style="height: 20%">
+
+                <a href="index3.html">Investar Class</a>
+            </div>
+        </div>
+        <div class="col tab">
+            <div class="tab-icon" style="height: 70%">
+                <a href="index4.html"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </div>
+            <div class="tab-icon-des" style="height: 20%">
+
+                <a href="index4.html">Search</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
 
 </body>
 </html>
